@@ -1,0 +1,31 @@
+<!-- Escreva um programa que leia a velocidade de um carro. Se ele ultrapassar 80Km/h,
+     mostre uma mensagem dizendo que ele foi multado.
+     A multa vai custar R$7,00 por cada Km acima do limite.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe027</title>
+</head>
+<body>
+    <h1>Verificador de Multas</h1>
+    <form action="">
+        <input type="number" id="km" placeholder="Km/h">
+        <input type="button" value="Verificar" onclick="verificarVelocidade()">
+    </form>
+
+    <h2 id="h2"></h2>
+</body>
+<script>
+    function verificarVelocidade(){
+        const vel = document.getElementById('km').value
+
+        if(vel > 80){
+            document.getElementById('h2').innerText = `Valor Acima do Limite, Multa: R$${((vel-80) * 7).toFixed(2)}`
+        }
+    }
+</script>
+</html>

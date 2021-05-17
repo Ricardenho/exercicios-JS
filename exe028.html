@@ -1,0 +1,31 @@
+<!-- Crie um programa que leia um número inteiro e mostre na tela se ele é PAR ou ÍMPAR.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>exe028</title>
+</head>
+<body>
+    <h1>Par ou Impar</h1>
+    <form action="">
+        <input type="number" id="num" placeholder="Numero">
+        <input type="button" value="Verificar" onclick="parOUimpar()">
+    </form>
+
+    <h2 id="h2"></h2>
+</body>
+
+<script>
+    function parOUimpar(){
+        if(document.getElementById('num').value % 2 == 0){
+            document.getElementById("h2").innerText = `${document.getElementById('num').value} é um numero: PAR`
+        }
+        else{
+            document.getElementById("h2").innerText = `${document.getElementById('num').value} é um numero: IMPAR`
+        }
+        
+    }
+</script>
+</html>

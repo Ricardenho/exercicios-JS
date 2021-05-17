@@ -1,0 +1,57 @@
+<!-- -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe030</title>
+</head>
+<body>
+    <h1><strong>Maior</strong> e <Small>Menor</Small></h1>
+    <form action="">
+        <input type="number" id="primeiro" placeholder="primeiro">
+        <input type="number" id="segundo" placeholder="segundo">
+        <input type="number" id="terceiro" placeholder="terceiro">
+        <input type="button" value="veificar" onclick="maiorEmenor()">
+    </form>
+
+    <h2 id="maior"></h2>
+    <h2 id="menor"></h2>
+</body>
+
+<script>
+
+    function maiorEmenor(){
+        let a = document.getElementById('primeiro').value
+        let b = document.getElementById('segundo').value
+        let c = document.getElementById('terceiro').value
+        if(a >= b && a >= c){
+            document.getElementById('maior').innerText = `O maior valor digitado foi ${a}`
+            if(b >= c){
+                document.getElementById('menor').innerText = `O menor valor digitado foi ${c}`
+            }
+            else{
+                document.getElementById('menor').innerText = `O menor valor digitado foi ${b}`
+            }
+        }else if(b>= a && b >= c){
+            document.getElementById('maior').innerText = `O maior valor digitado foi ${b}`
+            if(a >= c){
+                document.getElementById('menor').innerText = `O menor valor digitado foi ${c}`
+            }
+            else{
+                document.getElementById('menor').innerText = `O menor valor digitado foi ${a}`
+            }
+        }
+        else if(c>= a && c >= a){
+            document.getElementById('maior').innerText = `O maior valor digitado foi ${c}`
+            if(a >= b){
+                document.getElementById('menor').innerText = `O menor valor digitado foi ${b}`
+            }
+            else{
+                document.getElementById('menor').innerText = `O menor valor digitado foi ${a}`
+            }
+        }
+    }
+</script>
+</html>
