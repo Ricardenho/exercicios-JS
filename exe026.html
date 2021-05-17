@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe026</title>
+</head>
+<body>
+    <form action="">
+        Adivinha o numero que eu estou pensando...
+        <input type="text" id="esc">
+        <input type="button" value="Ok" onclick="verificar()">
+    </form>
+
+    <h1 id="h1"></h1>
+</body>
+
+<script>
+    function verificar(){
+        var cpu = Math.floor(Math.random(0, 5) * 5)
+        var jog = document.getElementById("esc")
+        if(cpu == jog.value){
+            document.getElementById("h1").innerText = `GANHOU eu escolhi o numero ${cpu}`
+        }
+        else{
+            document.getElementById("h1").innerText = `PERDEU eu escolhi o numero ${cpu}`
+        }
+    }
+    
+</script>
+</html>

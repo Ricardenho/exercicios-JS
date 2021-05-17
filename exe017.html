@@ -1,0 +1,38 @@
+<!-- Um professor quer sortear um dos seus quatro alunos para apagar o quadro.
+Faça um programa que ajude ele, lendo o nome dos alunos e escrevendo na tela o nome do escolhido.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe017</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="aluno1" placeholder="Aluno 1"><br>
+        <input type="text" id="aluno2" placeholder="Aluno 2"><br>
+        <input type="text" id="aluno3" placeholder="Aluno 3"><br>
+        <input type="text" id="aluno4" placeholder="Aluno 4"><br>
+        <input type="button" value="sortear" onclick="sorted()">
+    </form>
+
+    <h1 id="h1"></h1>
+</body>
+
+<script>
+    function sorted(){
+    
+        var n1 = document.getElementById("aluno1")
+        var n2 = document.getElementById("aluno2")
+        var n3 = document.getElementById("aluno3")
+        var n4 = document.getElementById("aluno4")
+
+        var turma = [n1.value, n2.value, n3.value, n4.value]
+        var sorteado = turma[Math.floor(Math.random() * turma.length)]
+
+        document.getElementById('h1').innerText = sorteado
+    }
+</script>
+</html>

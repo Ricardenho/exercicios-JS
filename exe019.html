@@ -1,0 +1,36 @@
+<!-- Crie um programa que leia o nome completo de uma pessoa e mostre: 
+- O nome com todas as letras maiúsculas e minúsculas.
+- Quantas letras ao todo.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe019</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="texto">
+        <input type="button" value="Analisar" onclick="Analisar()">
+    </form>
+
+    <h2 id="maiusculas"></h2>
+    <h2 id="minusculas"></h2>
+    <h2 id="total"></h2>
+</body>
+
+<script>
+    function Analisar(){
+        var texto = document.getElementById("texto")
+        document.getElementById("maiusculas").innerText = texto.value.toUpperCase()
+        document.getElementById("minusculas").innerText = texto.value.toLowerCase()
+        document.getElementById("total").innerText = texto.value.length
+    }
+</script>
+</html>

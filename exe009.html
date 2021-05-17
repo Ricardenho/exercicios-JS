@@ -1,0 +1,27 @@
+<!-- Crie um programa que leia quanto dinheiro uma pessoa tem na carteira e mostre quantos dólares ela pode comprar.
+ -->
+
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>exe009</title>
+ </head>
+ <body>
+     <form action="">
+         R$<input type="text" id="real">
+         <input type="button" value="Converter" onclick="convert()">
+     </form>
+
+     <h1 id="h1"></h1>
+ </body>
+ <script>
+     function convert(){
+        var real = document.getElementById("real")
+        var dolar = parseInt(real.value) / 5.23
+        document.getElementById("h1").innerText = 'Você pode comprar US$'+dolar.toFixed(2)
+     }
+ </script>
+ </html>

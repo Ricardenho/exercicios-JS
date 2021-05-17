@@ -1,0 +1,32 @@
+<!-- Crie um programa que leia o nome de uma cidade diga se ela começa ou não com o nome "SANTO".
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe021</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="city" placeholder="Cidade">
+        <input type="button" value="Verificar" onclick="cityy()">
+    </form>
+
+    <h1 id="h1"></h1>
+</body>
+<script>
+    function cityy(){
+        var txt = document.getElementById("city")
+        var cd = txt.value.split(" ", 1)
+        if(cd[0].toUpperCase() === "SANTO"){
+            document.getElementById("h1").innerText = "TRUE"
+        }
+        else{
+            document.getElementById("h1").innerText = "FALSE"
+        }
+    }
+</script>
+</html>

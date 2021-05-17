@@ -1,0 +1,62 @@
+<!--O mesmo professor do desafio 019 quer sortear a ordem de apresentação de trabalhos dos alunos.
+Faça um programa que leia o nome dos quatro alunos e mostre a ordem sorteada.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe018</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="aluno1" placeholder="Aluno 1"><br>
+        <input type="text" id="aluno2" placeholder="Aluno 2"><br>
+        <input type="text" id="aluno3" placeholder="Aluno 3"><br>
+        <input type="text" id="aluno4" placeholder="Aluno 4"><br>
+        <input type="button" value="sortear" onclick="sortear()">
+    </form>
+
+    <h1 id="h1"></h1>
+    <h2 id="a1"></h2>
+    <h2 id="a2"></h2>
+    <h2 id="a3"></h2>
+    <h2 id="a4"></h2>
+</body>
+
+<script>
+    function sortear(){
+        var n1 = document.getElementById("aluno1")
+        var n2 = document.getElementById("aluno2")
+        var n3 = document.getElementById("aluno3")
+        var n4 = document.getElementById("aluno4")
+
+        var turma = [n1.value, n2.value, n3.value, n4.value]
+
+        var sorteado = turma[Math.floor(Math.random() * turma.length)]
+        var n1 = sorteado
+        var pos = turma.indexOf(sorteado);
+        turma.splice(pos, 1)
+        
+
+        var sorteado = turma[Math.floor(Math.random() * turma.length)]
+        var n2 = sorteado
+        var pos = turma.indexOf(sorteado);
+        turma.splice(pos, 1)
+
+        var sorteado = turma[Math.floor(Math.random() * turma.length)]
+        var n3 = sorteado
+        var pos = turma.indexOf(sorteado);
+        turma.splice(pos, 1)
+
+        var n4 = turma[0]
+        
+        document.getElementById("h1").innerText = "Ordem de Apresentação"
+        document.getElementById('a1').innerText = "1º"+ n1
+        document.getElementById('a2').innerText = "2º"+ n2
+        document.getElementById('a3').innerText = "3º"+ n3
+        document.getElementById('a4').innerText = "4º"+ n4
+    }
+</script>
+</html>

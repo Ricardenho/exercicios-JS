@@ -1,0 +1,32 @@
+<!-- Faça um programa que leia um número Inteiro qualquer e mostre na tela a sua tabuada.(proibido o uso de listas) -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe008</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="num">
+        <input type="button" value="Ok" onclick="tabuada()">
+    </form>
+
+    <h1 id="h1"></h1>
+</body>
+
+<script>
+    
+    function tabuada(){
+        var n = document.getElementById("num")
+
+        var tabuada = [(n.value)*1, (n.value)*2,(n.value)*3,(n.value)*4,(n.value)*5,
+                        (n.value)*6,(n.value)*7,(n.value)*8,(n.value)*9,(n.value)*10]
+
+        document.getElementById("h1").innerText = tabuada
+    }
+
+    
+</script>
+</html>

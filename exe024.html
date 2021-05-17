@@ -1,0 +1,58 @@
+<!--Faça um programa que leia uma frase pelo teclado e mostre quantas vezes aparece a letra "A"
+    em que posição ela aparece a primeira vez e em que posição ela aparece a última vez.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe024</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="txt">
+        <input type="button" value="Verificar" onclick="Verificar()">
+    </form>
+
+    <h2 id="h2-1"></h2>
+    <h2 id="h2-2"></h2>
+    <h2 id="h2-3"></h2>
+</body>
+
+<script>
+    function Verificar(){
+        var txt = document.getElementById("txt")
+        var txt2 = txt.value
+        var numtxt = txt.value.length
+        var letras = 0
+        var primeira = -1
+        var ultima = 0
+        
+        for(var i=0; i<numtxt;i++){
+            var s = txt2.charAt(i)
+            if(s.toUpperCase() === 'A'){
+                letras++
+                if(ultima <= i){
+                    ultima = i
+                }
+                if(primeira == -1){
+                    primeira=i
+                }
+            }
+        }
+        
+        if(letras == 0){
+            document.getElementById("h2-1").innerText = `A letra A Não aparece na frase`
+            document.getElementById("h2-2").innerText = ''
+            document.getElementById("h2-3").innerText = ''
+        }
+        else{
+            document.getElementById("h2-1").innerText = `A letra A aparece ${letras} vezes na frase`
+            document.getElementById("h2-2").innerText = `A primeira letra A aparece na: ${primeira + 1}`
+            document.getElementById("h2-3").innerText = `A ultima letra A aparece na: ${ultima + 1}`
+        }
+        
+    }
+</script>
+</html>

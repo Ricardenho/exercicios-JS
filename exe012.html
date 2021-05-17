@@ -1,0 +1,27 @@
+<!-- Faça um algoritmo que leia o salário de um funcionário e mostre seu novo salário, com 15% de aumento.-->
+
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>exe012</title>
+ </head>
+ <body>
+     <form action="">
+         <input type="number" id="salario" placeholder="Salario">
+         <input type="button" value="Bonus" onclick="aumentar()">
+     </form>
+ 
+     <h1 id="h1"></h1>
+ </body>
+ 
+ <script>
+     function aumentar(){
+         var n = document.getElementById("salario")
+         var novo =  parseFloat(n.value) + (parseFloat(n.value) * 0.15)
+         document.getElementById("h1").innerText = 'R$'+novo.toFixed(2)  
+     }
+ </script>
+ </html>

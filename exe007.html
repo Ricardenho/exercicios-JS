@@ -1,0 +1,30 @@
+<!-- Escreva um programa que leia um valor em metros e o exiba convertido em centímetros e milímetros. -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe007</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="num">
+        <input type="button" value="Ok" onclick="convert()">
+    </form>
+
+    <h2 id="cm"></h2>
+    <h2 id="mm"></h2>
+
+</body>
+
+<script>
+    function convert(){
+        var cm = document.getElementById("num")
+        var mm = document.getElementById("num")
+        document.getElementById("cm").innerText = (parseInt(cm.value)*100).toFixed(1)+"cm"
+        document.getElementById("mm").innerText = (parseInt(mm.value)*1000).toFixed(2)+"mm"
+
+    }
+</script>
+</html>

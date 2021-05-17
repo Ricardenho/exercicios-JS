@@ -1,0 +1,31 @@
+<!-- Faça um programa que leia a largura e a altura de uma parede em metros,
+     calcule a sua área e a quantidade de tinta necessária para pintá-la,
+     sabendo que cada litro de tinta pinta uma área de 2 metros quadrados. -->
+
+     <!DOCTYPE html>
+     <html lang="pt-br">
+     <head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>exe010</title>
+     </head>
+     <body>
+        <form action="">
+            <input type="text" id="Altura" placeholder="Largura">
+            <input type="text" id="Largura" placeholder="Largura">
+            <input type="button" value="Calcular" onclick="calcular()">
+        </form>
+
+        <h1 id="h1"></h1>
+     </body>
+     <script>
+         function calcular(){
+             var l = document.getElementById("Largura")
+             var a = document.getElementById("Altura")
+             var area =  parseInt(l.value) * parseInt(a.value)
+             var tinta = area / 2
+             document.getElementById("h1").innerText = 'Você vai precisar comprar ' +tinta+'L de Tinta'
+         }
+     </script>
+     </html>

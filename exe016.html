@@ -1,0 +1,33 @@
+<!-- Faça um programa que leia um ângulo qualquer e mostre na tela o valor do seno, cosseno e tangente desse ângulo.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe016</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" id="angulo" placeholder="angulo">
+        <input type="button" value="Calcular" onclick="calc()">
+
+        <h2 id="seno"></h2>
+        <h2 id="cosseno"></h2>
+        <h2 id="tangente"></h2>
+    </form>
+</body>
+
+<script>
+    function calc(){
+
+        var ang = document.getElementById("angulo")
+        var deg = ang.value * Math.PI/180
+        document.getElementById("seno").innerText = "Seno : " +Math.sin(deg).toFixed(2)
+        document.getElementById("cosseno").innerText = "Cosseno : " +Math.cos(deg).toFixed(2)
+        document.getElementById("tangente").innerText = "Tangente : " +Math.tan(deg).toFixed(2)
+    }
+</script>
+</html>

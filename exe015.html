@@ -1,0 +1,31 @@
+<!-- Faça um programa que leia o comprimento do cateto oposto e do cateto adjacente de um triângulo retângulo.
+     Calcule e mostre o comprimento da hipotenusa.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe015</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" placeholder="Cateto Oposto" id="co">
+        <input type="number" placeholder="Cateto Adjacente" id="ca">
+        <input type="button" value="hipotenusa" onclick="hipo()">
+    </form>
+
+    <h1 id="h1"></h1>
+</body>
+
+<script>
+    function hipo(){
+         var co = document.getElementById("co")
+         var ca = document.getElementById("ca")
+         var hipo = Math.hypot(parseFloat(co.value), parseFloat(ca.value))
+         document.getElementById("h1").innerText = hipo.toFixed(2)
+    }
+</script>
+</html>

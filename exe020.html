@@ -1,0 +1,59 @@
+<!-- Faça um programa que leia um número de 0 a 9999 e mostre na tela cada um dos dígitos separados.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe020</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="num" >
+        <input type="button" value="Ok" onclick="gerar()">
+    </form>
+
+    <h2 id="milhar"></h2>
+    <h2 id="centena"></h2>
+    <h2 id="dezena"></h2>
+    <h2 id="unidade"></h2>
+    
+</body>
+<script>
+    function gerar(){
+        var num = document.getElementById("num")
+        if(num.value.length == 4){
+            document.getElementById("milhar").innerText = "Milhar : " +num.value[0]
+            document.getElementById("centena").innerText = "Centena : " +num.value[1]
+            document.getElementById("dezena").innerText = "Dezena : " +num.value[2]
+            document.getElementById("unidade").innerText = "Unidade : " +num.value[3]
+        }
+        else if(num.value.length == 3){
+            document.getElementById("milhar").innerText = ""
+            document.getElementById("centena").innerText ="Centena : " + num.value[0]
+            document.getElementById("dezena").innerText ="Dezena : " + num.value[1]
+            document.getElementById("unidade").innerText ="Unidade : " + num.value[2]
+        }
+        else if(num.value.length == 2){
+            document.getElementById("milhar").innerText = ""
+            document.getElementById("centena").innerText = ""
+            document.getElementById("dezena").innerText ="Dezena : " + num.value[0]
+            document.getElementById("unidade").innerText ="Unidade : " + num.value[1]
+        }
+        else if(num.value.length == 1){
+            document.getElementById("milhar").innerText = ""
+            document.getElementById("centena").innerText = ""
+            document.getElementById("dezena").innerText = ""
+            document.getElementById("unidade").innerText ="Unidade : " + num.value[0]
+        }
+        else{
+            document.getElementById("milhar").innerText = "Valor Incorreto"
+            document.getElementById("centena").innerText = ""
+            document.getElementById("dezena").innerText = ""
+            document.getElementById("unidade").innerText = ""
+        }   
+    }
+    
+</script>
+</html>

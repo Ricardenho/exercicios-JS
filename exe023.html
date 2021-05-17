@@ -1,0 +1,40 @@
+<!-- Crie um programa que leia o nome de uma pessoa e diga se ela tem "SILVA" no nome. -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe023</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="nomeC" placeholder="Nome Completo">
+        <input type="button" value="Verificar" onclick="nome()">
+    </form>
+
+    <h1 id="h1"></h1>
+</body>
+<script>
+    function nome(){
+        var txt = document.getElementById("nomeC")
+        var cd = txt.value.split(" ")
+        var sim = 0
+        for(var i=0;i<cd.length;i++){
+            console.log(cd[i])
+            if(cd[i].toUpperCase() === "SILVA"){
+                sim++
+            }
+        }
+        if(sim == 0){
+            console.log(sim)
+            document.getElementById("h1").innerText = "Seu Nome não tem Silva"
+        }
+        else{
+            document.getElementById("h1").innerText = "Seu nome tem Silva"
+        }
+        
+        
+    }
+</script>
+</html>

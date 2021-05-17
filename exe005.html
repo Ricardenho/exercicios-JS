@@ -1,0 +1,33 @@
+<!-- Faça um programa que leia um numero e mostre seu Dobro triplo e raiz Quadrada -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe005</title>
+</head>
+<body>
+    
+    <form action="">
+        <input type="text" id="n1" name="n1">
+        
+        <input type="button" onclick="res()" value="Ok">
+      </form>
+    
+      <h2 id="h2-1"></h2>
+      <h2 id="h2-2"></h2>
+      <h2 id="h2-3"></h2>
+    
+</body>
+
+<script>
+    function res(){
+        var n1 = document.getElementById("n1");
+        document.getElementById("h2-1").innerText = `O Dobro de ${n1.value} = ${n1.value * 2}`
+        document.getElementById("h2-2").innerText = `O Triplo de ${n1.value} = ${n1.value * 3}`
+        document.getElementById("h2-3").innerText = `A Raiz de ${n1.value} = ${Math.sqrt(n1.value).toFixed(2)}`
+
+    }
+</script>
+</html>
