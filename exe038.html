@@ -1,0 +1,54 @@
+<!-- A Confederação Nacional de Natação precisa de um programa que leia o ano de nascimento de um atleta e mostre sua categoria, de acordo com a idade:
+- Até 9 anos: MIRIM
+- Até 14 anos: INFANTIL
+- Até 19 anos: JÚNIOR
+- Até 25 anos: SÊNIOR
+- Acima de 25 anos: MASTER
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe038</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Classificação de Atletas</legend>
+            <label for="Nome">Nome</label>
+            <input type="text" id="nome">
+            <label for="Nascimento">Data de Nasc</label>
+            <input type="number" id="nasc" placeholder="2021">
+            <input type="button" value="Verificar" onclick="categoria()">
+        </fieldset>
+    </form>
+
+    <h2 id="categoria"></h2>
+</body>
+
+<script>
+    function categoria(){
+        let hj = new Date
+        let ano = document.getElementById('nasc').value
+        console.log(hj.getFullYear() - ano )
+        if(hj.getFullYear() - ano <= 9){
+            document.getElementById('categoria').innerText = `Atleta: ${document.getElementById('nome').value} --- Categoria: MIRIM`
+        }
+         else if(hj.getFullYear() - ano > 9 && hj.getFullYear() - ano <= 14){
+            document.getElementById('categoria').innerText = `Atleta: ${document.getElementById('nome').value} --- Categoria: INFANTIL`
+        }
+        else if(hj.getFullYear() - ano > 14 && hj.getFullYear() - ano <= 19){
+            document.getElementById('categoria').innerText = `Atleta: ${document.getElementById('nome').value} --- Categoria: JUNIOR`
+        }
+        else if(hj.getFullYear() - ano > 19 && hj.getFullYear() - ano <= 25){
+            document.getElementById('categoria').innerText = `Atleta: ${document.getElementById('nome').value} --- Categoria: SÊNIOR`
+        }
+        else{
+            document.getElementById('categoria').innerText = `Atleta: ${document.getElementById('nome').value} --- Categoria: MASTER`
+        }
+    }
+</script>
+</html>
