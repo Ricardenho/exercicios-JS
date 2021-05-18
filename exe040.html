@@ -1,0 +1,51 @@
+<!-- Desenvolva uma lógica que leia o peso e a altura de uma pessoa, calcule seu Índice de Massa Corporal (IMC) e mostre seu status, de acordo com a tabela abaixo:
+- IMC abaixo de 18,5: Abaixo do Peso
+- Entre 18,5 e 25: Peso Ideal
+- 25 até 30: Sobrepeso
+- 30 até 40: Obesidade
+- Acima de 40: Obesidade Mórbida-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe040</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend nome="IMC">IMC</legend>
+            <label for="Peso">Peso</label>
+            <input type="number" id="peso" placeholder="Kg">
+            <label for="Altura">Altura</label>
+            <input type="number" id="alt" placeholder="m">
+            <input type="button" value="Calcular" onclick="imc()">
+        </fieldset>
+    </form>
+
+    <h2 id="resultado"></h2>
+</body>
+
+<script>
+    function imc(){
+        let p = document.getElementById('peso').value
+        let a = document.getElementById('alt').value
+        
+        let media = p/(a*a)
+        console.log(media)
+        if(media < 18.5){
+            document.getElementById('resultado').innerText = `IMC de ${media.toFixed(2)} Status: Abaixo do Peso`
+        } else if(media >= 18.5 && media < 25){
+            document.getElementById('resultado').innerText = `IMC de ${media.toFixed(2)} Status: Peso Ideal`
+        }else if(media >= 25 && media < 30){
+            document.getElementById('resultado').innerText = `IMC de ${media.toFixed(2)} Status: Sobrepeso`
+        }else if(media >= 30 && media < 40){
+            document.getElementById('resultado').innerText = `IMC de ${media.toFixed(2)} Status: Obesidade`
+        }else{
+            document.getElementById('resultado').innerText = `IMC de ${media.toFixed(2)} Status: Obesidade Mórbida`
+        }
+    }
+</script>
+</html>
