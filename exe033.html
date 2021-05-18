@@ -1,0 +1,46 @@
+<!-- Escreva um programa para aprovar o empréstimo bancário para a compra de uma casa. 
+    Pergunte o valor da casa, o salário do comprador e em quantos meses ele vai pagar. 
+    A prestação mensal não pode exceder 30% do salário ou então o empréstimo será negado.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe033</title>
+</head>
+<body>
+    <form action="">
+
+        <fieldset>
+            <legend>Emprestimo</legend>
+            <label for="valor do imovel">Valor do Imovel</label>
+            <input type="number" id="valorCasa" placeholder="R$0,00"><br><br>
+            <label for="salario mensal">Salário</label>
+            <input type="number" id="salario" placeholder="R$0,00"><br><br>
+            <label for="meses total">Meses</label>
+            <input type="number" id="meses" placeholder="0">
+            <input type="button" value="Calcular" onclick="calcular()">
+        </fieldset>
+        
+    </form>
+    <h2 id="resposta"></h2>
+    
+</body>
+
+<script>
+    function calcular(){
+        let imovel = document.getElementById('valorCasa').value
+        let salario = document.getElementById('salario').value
+        let meses = document.getElementById('meses').value
+
+        if ((imovel/meses) < salario*0.3){
+            document.getElementById('resposta').innerText= `Emprestimo APROVADO com parcelas de R$${(imovel/meses).toFixed(2)} mensal`
+        }
+        else{
+            document.getElementById('resposta').innerText= `Emprestimo RECUSADO`
+        }
+    }
+</script>
+</html>
