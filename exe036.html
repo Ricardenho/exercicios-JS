@@ -30,8 +30,11 @@
         if(hj.getFullYear()-nasc < 18){
             document.getElementById('resposta').innerText = `Alistamento apartir dos 18 anos, volte daqui ${18-(hj.getFullYear()-nasc)} anos`
         }
-        else{
+        else if(hj.getFullYear()-nasc === 18){
             document.getElementById('resposta').innerText ='Alistamento permitido'
+        }
+        else{
+            document.getElementById('resposta').innerText =`Alistamento Atrasado em  ${(hj.getFullYear()-nasc) -18} anos`
         }
         
     }
