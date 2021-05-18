@@ -1,0 +1,59 @@
+<!-- Elabore um programa que calcule o valor a ser pago por um produto, considerando o seu preço normal e condição de pagamento:
+- à vista dinheiro/cheque: 10% de desconto
+- à vista no cartão: 5% de desconto
+- em até 2x no cartão: preço normal
+- 3x ou mais no cartão: 20% de juros-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe041</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Pagamento</legend>
+            <label for="Valor">Valor da Compra</label>
+            <input type="number" id="valor" placeholder="R$0.00">
+            <label for="parcelas">Numero de Parcelas</label>
+            <input type="number" id="parcelas" placeholder="0"><br><br>
+            <label for="pagamento">Pagamento</label>
+            <input type="button" value="Dinheiro" onclick="aVista()">
+            <input type="button" value="Cartão" onclick="cartao()">
+            <input type="button" value="Parcelado" onclick="parcelado()">
+        </fieldset>
+    </form>
+
+    <h2 id="pagamento"></h2>
+</body>
+
+<script>
+    
+    function aVista(){
+        let valor = document.getElementById('valor').value
+        document.getElementById('pagamento').innerText = `Valor total com desconto de 10%: R$${(parseInt(valor)-(valor*0.1)).toFixed(2)}`
+    }
+
+    function cartao(){
+        let valor = document.getElementById('valor').value
+        document.getElementById('pagamento').innerText = `Valor total com desconto de 5%: R$${(parseInt(valor)-(valor*0.05)).toFixed(2)}`
+    }
+
+    function parcelado(){
+        
+        let valor = document.getElementById('valor').value
+        let parcelas = document.getElementById('parcelas').value
+
+        if(parcelas == 2){
+            document.getElementById('pagamento').innerText = `Valor total em 2 vezes de: R$${(parseInt(valor)/2).toFixed(2)}`
+        }
+        else{
+            document.getElementById('pagamento').innerText = `Valor total com Acrescimo de 20% R$${(parseInt(valor)+(valor*0.05)).toFixed(2)} , dividido em ${parcelas} parcelas: R$${((parseInt(valor)+(valor*0.05))/7).toFixed(2)}`
+        }
+        
+    }
+</script>
+</html>
