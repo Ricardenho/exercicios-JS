@@ -1,0 +1,48 @@
+<!-- Refaça o DESAFIO 035 dos triângulos, acrescentando o recurso de mostrar que tipo de triângulo será formado:
+- EQUILÁTERO: todos os lados iguais
+- ISÓSCELES: dois lados iguais, um diferente
+- ESCALENO: todos os lados diferentes -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe032</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" id="seg1" placeholder="Segmento 1">
+        <input type="number" id="seg2" placeholder="Segmento 2">
+        <input type="number" id="seg3" placeholder="Segmento 3">
+        <input type="button" value="Verificar" onclick="isTriangle()">
+    </form>
+
+    <h2 id="triangulo"></h2>
+</body>
+
+<script>
+    function isTriangle(){
+        let r1 = document.getElementById('seg1').value
+        let r2 = document.getElementById('seg2').value
+        let r3 = document.getElementById('seg3').value
+
+        let sit_1 = ((r2 - r3) < r1 < (r2 + r3))
+        let sit_2 = ((r1 - r3) < r2 < (r1 + r3))
+        let sit_3 = ((r1 - r2) < r3 < (r1 + r2))
+        
+        if (sit_1 && sit_2 && sit_3){
+            if(r1 == r2 && r1 == r3){
+                document.getElementById('triangulo').innerText = "Triângulo EQUILÁTERO"
+            }else if((r1!=r2 && r2==r3) || (r2!=r1 && r1==r3) || (r3!=r2 && r2==r1)){
+                document.getElementById('triangulo').innerText = "Triângulo ISÓCELES"
+            }else{
+                document.getElementById('triangulo').innerText = "Triângulo EQUILÁTERO"
+            }
+            
+        }else{
+            document.getElementById('triangulo').innerText = "Não pode formar um triângulo"
+        }
+    }
+</script>
+</html>
