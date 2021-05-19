@@ -1,0 +1,35 @@
+<!-- Faça um programa que mostre na tela uma contagem regressiva para o estouro de fogos de artifício,
+     indo de 10 até 0, com uma pausa de 1 segundo entre eles.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe042</title>
+</head>
+<body>
+    <h1 id="contagem"></h1>
+    <button onclick="iniciar()" id="btn">Start</button>
+
+    <h2 id="BOOM" style="font-size: 200px;"></h2>
+</body>
+
+<script>
+    function iniciar(){
+        document.getElementById('btn').style.visibility = 'hidden';
+        let x = 10
+        setInterval(()=>{
+            document.getElementById('contagem').innerText = x
+            
+            if(x==0){
+                document.getElementById('contagem').style.visibility = 'hidden';
+                document.getElementById('BOOM').innerText = 'BOOM'
+            }
+            x--
+        }, 1000)
+    }
+    
+</script>
+</html>
