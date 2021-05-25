@@ -1,0 +1,40 @@
+<!-- Faça um programa que leia um número inteiro e diga se ele é ou não um número primo. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe048</title>
+</head>
+<body>
+    <form action="">
+        <Fieldset>
+            <legend>Numero Primo</legend>
+            <label for="">Digite o numero:</label>
+            <input type="number" placeholder="0" id="num">
+            <input type="button" value="Verificar" onclick="primo()">
+        </Fieldset>
+    </form>
+
+    <h2 id="resultado"></h2>
+</body>
+<script>
+    function primo(){
+        let num = parseInt(document.getElementById('num').value)
+        let tot = 0
+        for (var i=1;i<=num;i++){
+            if (num%i==0){
+                tot+=1
+            }
+        }
+        if(tot>2){
+            document.getElementById('resultado').innerText = `O numero ${num} Não é primo`
+        }
+        else{
+            document.getElementById('resultado').innerText = `O numero ${num} É primo`
+        }
+    }
+</script>
+</html>
