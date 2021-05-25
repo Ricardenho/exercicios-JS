@@ -1,0 +1,39 @@
+<!-- Faça um programa que leia um número qualquer e mostre o seu fatorial.
+Ex: 5! = 5 x 4 x 3 x 2 x 1 = 120
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe055</title>
+</head>
+<body>
+    <form action="">
+        <label for="numero">Fatorial:</label>
+        <input type="number" placeholder="0" id="num">
+        <input type="button" value="Calcular" onclick="fatorial()">
+    </form>
+    <h2 id="res"></h2>
+</body>
+<script>
+    function fatorial(){
+        let num = document.getElementById('num').value
+        let tot=1
+        frase = `${num}! = `
+        for(var i=num;i>0;i--){
+            if(i!=1){
+                frase +=  `${i} x `
+                tot*=i
+            }else{
+                frase +=  `${i} = `
+                tot*=i
+            }
+            
+        }
+        document.getElementById('res').innerText = `${frase} ${tot}`
+    }
+</script>
+</html>
