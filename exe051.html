@@ -1,0 +1,54 @@
+<!--  Faça um programa que leia o peso de cinco pessoas. No final, mostre qual foi o maior e o menor peso lidos.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe051</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <Legend>Pesos</Legend>
+            <label for="" id="label">Peso da 1ª Pessoa:</label>
+            <input type="number" placeholder="Kg" id="peso">
+            <input type="button" value="armazenar" onclick="pesos()">
+        </fieldset>
+    </form>
+
+    <h2 id="resultado"></h2>
+</body>
+
+<script>
+    let label = 1
+    let men = 0
+    let mai = 0
+    function pesos(){
+        let peso = document.getElementById('peso').value
+        if(label==1){
+            mai = peso
+            men = peso
+        }
+        if(peso >= mai){
+            mai = peso
+        }
+        if(peso <= men){
+            men = peso
+        }
+        
+        label++
+        console.log(mai, men)
+        if(label==6){
+            document.getElementById('resultado').innerText = `Maior Peso: ${mai}Kg | Menor Peso: ${men}Kg`
+        }else{
+            document.getElementById('label').innerText = `Peso da ${label}ª Pessoa:`
+        }
+        
+        
+        
+        
+    }
+</script>
+</html>
