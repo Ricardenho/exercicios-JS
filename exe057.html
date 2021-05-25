@@ -1,0 +1,37 @@
+<!--screva um programa que leia um número N inteiro qualquer e mostre na tela os N primeiros elementos de uma Sequência de Fibonacci.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe057</title>
+</head>
+<body>
+    <form action="">
+        <label for="fibonacci">Numero de termos:</label>
+        <input type="number" placeholder="0" id='num'>
+        <input type="button" value="Gerar" onclick="fibonacci()">
+    </form>
+
+    <h2 id="res"></h2>
+</body>
+
+<script>
+    primeiro = 0
+    segundo = 1
+    auxiliar = 0
+    fibonaci = ''
+    function fibonacci(){
+        let num = document.getElementById('num').value
+        for(var i=0; i<num;i++){
+            fibonaci += `${primeiro} `
+            auxiliar = primeiro+segundo
+            primeiro = segundo
+            segundo = auxiliar
+        }
+
+        document.getElementById('res').innerText = 'Sequêmcia de Fibonacci: '+fibonaci
+    }
+</script>
+</html>
