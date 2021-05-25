@@ -1,0 +1,36 @@
+<!--Crie um programa que leia vários números inteiros pelo teclado.
+    O programa só vai parar quando o usuário digitar o valor 999, que é a condição de parada.
+    No final, mostre quantos números foram digitados e qual foi a soma entre eles (desconsiderando o flag).-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe059</title>
+</head>
+<body>
+    <form action="">
+        <input type="Number" id="num">
+        <input type="button" value="Enviar" onclick="analisador()">
+
+        <h2 id="total"></h2>
+    </form>
+</body>
+
+<script>
+    let soma = 0
+    let nums = 0
+    function analisador(){
+        let numero = document.getElementById('num').value
+        if(numero !=999){
+            soma+=parseInt(numero)
+            nums++
+        }else{
+            document.getElementById('total').innerText = `Foram digitados ${nums} números, e a soma entre eles é ${soma}`
+        }
+
+
+    }
+</script>
+</html>
