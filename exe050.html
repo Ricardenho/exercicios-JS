@@ -1,0 +1,51 @@
+<!-- Crie um programa que leia o ano de nascimento de sete pessoas.
+No final, mostre quantas pessoas ainda não atingiram a maioridade e quantas já são maiores.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe050</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <Legend>Maior Idade</Legend>
+            <label for="" id="label">Ano de nascimento da 1ª Pessoa:</label>
+            <input type="number" placeholder="2021" id="ano">
+            <input type="button" value="armazenar" onclick="maiorIdade()">
+        </fieldset>
+    </form>
+
+    <h2 id="resultado"></h2>
+</body>
+
+<script>
+    let label = 1
+    let men = 0
+    let mai = 0
+    function maiorIdade(){
+        let ano = document.getElementById('ano').value
+        let atual = new Date
+        
+        if((atual.getFullYear() - ano) < 18){
+                men++
+                label++
+        }
+        else{
+                mai++
+                label++  
+        }
+         
+        if(label == 8){
+            document.getElementById('resultado').innerText = `${mai} pessoas são maiores de idades | ${men} pessoas são menores de idade`
+        }else{
+            document.getElementById('label').innerText = `Ano de nascimento da ${label}ª Pessoa:`
+        }
+        
+        
+    }
+</script>
+</html>
