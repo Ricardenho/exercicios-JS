@@ -1,0 +1,52 @@
+<!--Crie um programa que leia uma frase qualquer e diga se ela é um palíndromo, desconsiderando os espaços.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe049</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <Legend>Palíndromo</Legend>
+            <label for="">Digite a Frase:</label>
+            <input type="text" placeholder="..." id="frase">
+            <input type="button" value="verificar" onclick="palindromo()">
+        </fieldset>
+    </form>
+    <h2 id="resultado"></h2>
+</body>
+<script>
+               
+               
+                
+                
+       
+    function palindromo(){
+        let frase = document.getElementById('frase').value
+        var tamanho = frase.length;
+        var StringContraria = "";
+        var fraseSemEspaco = "";
+        for( var i = tamanho; i >= 0; i-- ) {
+            if( frase.charAt(i) != " " ) {
+                StringContraria += frase.charAt(i);   
+            }
+        }
+        for( var i = 0; i <= tamanho; i++ ) {
+            if( frase.charAt(i) != " " ) {
+                fraseSemEspaco += frase.charAt(i);   
+            }
+        }
+        if(fraseSemEspaco === StringContraria){
+            document.getElementById('resultado').innerText = `${frase} - é um PALINDROMO`
+        }
+        else{
+            document.getElementById('resultado').innerText = `${frase} - Não é um PALINDROMO`
+        }
+    }
+</script>
+</html>
