@@ -1,0 +1,69 @@
+<!-- Desenvolva um programa que leia o nome, idade e sexo de 4 pessoas.
+    No final do programa, mostre: a média de idade do grupo,
+    qual é o nome do homem mais velho e quantas mulheres têm menos de 20 anos.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe052</title>
+</head>
+<body>
+    <form action="">
+        <Fieldset>
+            <Legend>Analisador</Legend>
+            <label for="Nome">Nome:</label>
+            <input type="text" id="name"><br>
+            <label for="Idade">Idade:</label>
+            <input type="number" id="idade"><br>
+            <label for="M">Masculino</label>
+            <input type="radio" id="M" name="sexo" value="M" onclick="selecao(this.value)">
+            <label for="F">Feminino</label>
+            <input type="radio" id="F" name="sexo" value="F" onclick="selecao(this.value)">
+            <input type="button" value="Enviar" onclick="analisar()">
+        </Fieldset>
+    </form>
+    <h1 id="cont">0 pessoas cadastradas</h1>
+    <h2 id="mediaIdade"></h2>
+    <h2 id="homem"></h2>
+    <h2 id="mulheres"></h2>
+</body>
+
+<script>
+    let sexo =''
+    let cont = 1
+    let idade = 0
+    let homemIdade = 0
+    let homemNome = ""
+    let mulheres = 0
+
+    function selecao(a){
+        sexo = a
+    }
+
+    function analisar(){
+        document.getElementById('cont').innerText = `${cont} pessoas cadastradas`
+        
+        let formIdade = document.getElementById('idade').value
+        idade += parseInt(formIdade)
+
+        if(sexo == 'M' && formIdade >= homemIdade){
+            homemIdade=formIdade
+            homemNome = document.getElementById('name').value
+            console.log(homemNome, homemIdade)
+        }
+        if(sexo == 'F' && formIdade < 20){
+            mulheres++
+        }
+        cont++
+        if(cont == 6){
+            document.getElementById("mediaIdade").innerText = `A media de idade dos cadastrados é de ${idade/5}`
+            document.getElementById("homem").innerText = `O Homem mais velho é o Sr.${homemNome.toUpperCase()} com ${homemIdade} anos`
+            document.getElementById('mulheres').innerText = `Foram cadastradas ${mulheres}mulheres com menos de 20 anos`
+        }
+        
+    }
+</script>
+</html>
