@@ -1,0 +1,45 @@
+<!-- Desenvolva um programa que leia seis números inteiros e mostre a soma apenas daqueles que forem pares.
+    Se o valor digitado for ímpar, desconsidere-o.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe046</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+                <legend >Numeros</legend>
+                    <label for="Numero" id="num">Digite o 1º numero</label>
+                    <input type="number" id="numero" placeholder="0">
+                    <input type="button" value="Enviar" onclick="verificar()">  
+            </fieldset>
+    </form>
+
+    <h2 id='Resultado'></h2>
+</body>
+
+<script>
+    let tot = 0
+    let label = 1
+    function verificar(){
+        
+        if(document.getElementById('numero').value %2 == 0){
+            tot+=parseInt(document.getElementById('numero').value)
+            console.log(tot)
+        }
+        label+=1
+        document.getElementById('num').innerText = `Digite o ${label}º numero`
+
+        if(label == 7){
+            document.getElementById('Resultado').innerText = `A soma dos numeros pares foi ${tot}`
+            document.getElementById('num').innerText = `Digite o ${label-1}º numero`
+        }
+        
+    }
+
+</script>
+</html>
