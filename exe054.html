@@ -1,0 +1,41 @@
+<!--Melhore o jogo do DESAFIO 026 onde o computador vai "pensar" em um número entre 0 e 10.
+    Só que agora o jogador vai tentar adivinhar até acertar,
+    mostrando no final quantos palpites foram necessários para vencer.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe026</title>
+</head>
+<body>
+    <form action="">
+        De 0 a 10<br>
+        Adivinha o numero que eu estou pensando...
+        <input type="text" id="esc">
+        <input type="button" value="Ok" onclick="verificar()">
+    </form>
+
+    <h1 id="h1"></h1>
+    <h2 id="palpites"></h2>
+</body>
+
+<script>
+    var cpu = Math.floor(Math.random(0, 10) * 10)
+    var palpites = 0;
+    function verificar(){
+        
+        var jog = document.getElementById("esc")
+        if(cpu == jog.value){
+            document.getElementById("h1").innerText = `GANHOU eu escolhi o numero ${cpu}`
+            document.getElementById("palpites").innerText = `Você acertou em ${palpites} tentativas.`
+        }
+        else{
+            document.getElementById("h1").innerText = `Errou tente de novo...`
+            palpites++
+        }
+    }
+    
+</script>
+</html>
